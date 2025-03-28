@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Turn, TurnLog
+from .serializers import TurnSerializer, TurnLogSerializer
 
-# Create your views here.
+class TurnViewSet(ModelViewSet):
+    queryset = Turn.objects.all()
+    serializer_class = TurnSerializer
+
+class TurnLogViewSet(ModelViewSet):
+    queryset = TurnLog.objects.all()
+    serializer_class = TurnLogSerializer

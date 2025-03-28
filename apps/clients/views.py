@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Clients
+from .serializers import ClientsSerializer
 
-# Create your views here.
+class ClientsViewSet(ModelViewSet):
+    queryset = Clients.objects.all()
+    serializer_class = ClientsSerializer
